@@ -6,7 +6,7 @@ import PaymentRouter from "./PaymentRouter";
 let router = express.Router();
 
 let initWebRoute = (app) => {
-  app.use("/", "Success connected!!!");
+  // app.use("/", homeService);
   app.use("/api/user", UserRouter);
   app.use("/api/product", ProductRouter);
   app.use("/api/order/", OrderRouter);
