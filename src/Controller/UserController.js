@@ -20,11 +20,11 @@ const signIn = async (req, res) => {
     const { refresh_token, ...newResponse } = response;
 
     res.cookie("refresh_token", refresh_token, {
-      httpOnly: true,
-      secure: false,
+      httpOnly: false,
+      secure: true,
       sameSite: "strict",
       path: "/",
-      maxAge: 7 * 24 * 60 * 60 * 1000,
+      // maxAge: 7 * 24 * 60 * 60 * 1000,
     });
     return res.status(200).json({ ...newResponse, refresh_token });
   } catch (e) {
@@ -39,7 +39,7 @@ const signIn = async (req, res) => {
 const getDetailUser = async (req, res) => {
   try {
     let userId = req.params.userId;
-    
+
     if (!userId) {
       return res.status(200).json({
         status: "ERROR",
