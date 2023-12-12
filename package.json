@@ -2,7 +2,7 @@
   "name": "satomi-jin",
   "version": "1.0.0",
   "description": "backend sern stack",
-  "main": "server.js",
+  "main": "src/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon src/server.js"
