@@ -2,7 +2,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import initWebRoute from "./routes/web";
 import * as connectDB from "./config/connectDB";
-import Cors from "cors";
+const Cors = require("cors");
 import cookieParser from "cookie-parser";
 require("dotenv").config();
 
