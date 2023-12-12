@@ -27,12 +27,13 @@ let app = express();
 //   next();
 // });
 
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", `https://ecommerce-v2-fe.vercel.app/`);
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-  next();
-});
+// app.use((req, res, next) => {
+//   res.header("Access-Control-Allow-Origin", `https://ecommerce-v2-fe.vercel.app/`);
+//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+//   next();
+// });
+app.use(Cors());
 app.use(bodyParser.json({ limit: "50mb" }));
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 app.use(cookieParser());
