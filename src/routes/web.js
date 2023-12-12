@@ -7,7 +7,6 @@ import UserController from "../Controller/UserController";
 let router = express.Router();
 
 let initWebRoute = (app) => {
-  app.use("/", UserController.helloWorld);
   app.use("/api/user", UserRouter);
   app.use("/api/product", ProductRouter);
   app.use("/api/order/", OrderRouter);

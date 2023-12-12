@@ -3,6 +3,7 @@ import UserController from "../Controller/UserController";
 import { authUserMiddlerWare, authMiddleWare } from "../middleware/authMiddleware";
 let router = express.Router();
 
+router.get("/", UserController.helloWorld);
 router.post("/sign-up", UserController.createNewUser);
 router.post("/sign-in", UserController.signIn);
 router.get("/get-detail-user/:userId", authUserMiddlerWare, UserController.getDetailUser);
