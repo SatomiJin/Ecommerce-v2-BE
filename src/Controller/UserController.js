@@ -1,6 +1,17 @@
 import UserService from "../Service/UserService";
 import { refreshTokenJwtService } from "../Service/JwtService";
 
+const helloWorld = (req, res) => {
+  try {
+    return res.status(200).json("Hello World!!!");
+  } catch (e) {
+    return res.status(200).json({
+      status: "ERRORS",
+      message: "Error from server",
+    });
+  }
+};
+
 const createNewUser = async (req, res) => {
   try {
     let newUser = await UserService.createNewUser(req.body);
@@ -127,4 +138,5 @@ module.exports = {
   updateUserInfo,
   getAllUser,
   deleteUserByEmail,
+  helloWorld,
 };
