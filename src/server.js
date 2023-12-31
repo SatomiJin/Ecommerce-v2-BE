@@ -2,7 +2,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import initWebRoute from "./routes/web";
 import * as connectDB from "./config/connectDB";
-const Cors = require("cors");
+const cors = require("cors");
 import cookieParser from "cookie-parser";
 require("dotenv").config();
 
@@ -14,7 +14,7 @@ let app = express();
 //   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
 //   next();
 // });
-app.use(Cors());
+app.use(cors());
 app.use(bodyParser.json({ limit: "50mb" }));
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 app.use(cookieParser());
